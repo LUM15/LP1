@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--Local em que fica armazenado o conteudo a ser renderizado no navegador-->
+<!--Local que recebe a <tag> que inidica a lingua da pagina-->
+<html lang="pt-br">
+	<!--Local em que ficarao armazenadas as informacoes que serao passadas ao navegador-->
+	<head>
+		<!--<meta> para padrao de caracteres da pagina-->
+		<meta charset="UTF-8">
+		<!--<link> para indicar o arquivo CSS que personalizara o documento HTML-->
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<script>
+
+			function pulaLinha() {
+
+				document.write("<br>");
+				document.write("<br>");
+
+			}
+
+			function mostra(frase) {
+
+				document.write(frase);
+				pulaLinha();
+			}
+			
+			var usuarioSalvo = "luis"
+			var senhaSalva = "123";
+			
+			var usuarioInformado = prompt("Informe o usuario: ");
+			var senhaInformada = prompt("Informe a senha: ");
+			
+			var contador = 0;
+			while(contador < 2){
+				
+				if (usuarioInformado == usuarioSalvo && senhaInformada == senhaSalva) {
+				
+					mostra("Login realizado com sucesso!");
+					break;
+				} else {
+					alert("Falha no login, número de tentativas restantes " + (2 - contador));
+					var usuarioInformado = prompt("Informe o usuario: ");
+					var senhaInformada = prompt("Informe a senha: ");
+					contador += 1;
+				}
+				if (contador == 2) {
+					alert("Falha no login!");
+				}
+			}
+			
+			mostra("FIM!");
+		</script>
+	</body>
+</html>
