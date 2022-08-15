@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+}
+
+	function geraNumero(n){
+		var limite = n;
+		var nFinal = 0;
+		var nGerado = parseInt(Math.random() * 100)
+		if (nGerado > limite) {
+		
+			geraNumero(limite);
+		
+		} else {
+			nFinal = nGerado;
+		}
+		
+		return nFinal;
+		
+	}
+	
+	var numeroGerado = geraNumero(90);
+	
+	mostra(numeroGerado);
+	
+</script>

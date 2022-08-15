@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<script>
+	function pulaLinha(){
+		document.write("<br>");
+	}
+	
+	function mostra(geracoesPassadas){
+		document.write("Se passaram " + geracoesPassadas + " gerações!");
+	}
+	
+	function anosPassados(anoAtual, geracaoEmAnos){
+		 quantidadeDeGeracoes = Math.round(((anoAtual - 1500) / geracaoEmAnos));
+	}
+	
+	var quantidadeDeGeracoes;
+	
+	anosPassados(2022, 28);
+	mostra(quantidadeDeGeracoes);
+ 
+</script>
