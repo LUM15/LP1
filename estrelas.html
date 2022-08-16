@@ -16,7 +16,6 @@
 			function pulaLinha() {
 
 				document.write("<br>");
-				document.write("<br>");
 
 			}
 
@@ -25,41 +24,16 @@
 				document.write("<p>" + frase + "</p>");
 				pulaLinha();
 			}
+			for (var i = 0; i < 10; i++)	{
 			
-			function geraNumero(n){
-				var limite = n;
-				var nFinal = 0;
-				var nGerado = parseInt(Math.random() * 10)
-				if (nGerado > limite) {
+				for (var j = 0; j < 10; j++)	{
 				
-					geraNumero(limite);
+					document.write("*");
 				
-				} else {
-					nFinal = nGerado;
-				}
-				
-				return nFinal;
-				
-			}
-			
-			var numeroGerado = geraNumero(10);
-			var numeroTentativas = 0;
-		
-			while(numeroTentativas < 3) {
-			
-				var chute = parseInt(prompt("Faça seu chute:"))
-				
-				if (chute == numeroGerado) {
-				
-					mostra("Você acertou!<br>O número pensado foi: " + numeroGerado);
-					break;
-				} else {
-				
-					mostra("Errou!");
 				
 				}
 			
-				numeroTentativas++;
+				pulaLinha();
 			}
 			
 			mostra("FIM!");

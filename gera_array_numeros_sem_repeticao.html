@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="style.css">
+<body>
+<input />
+<br><br>
+<button>Gerar</button>
+<script>
+
+	var quantidade;
+
+	var input = document.querySelector("input");
+    input.focus();
+	
+	function gerarNumeros(){
+	
+		quantidade = input.value;
+	
+		//Array que sera dinamicamente gerado de acordo com a 'quantidade' passada
+		var numerosGerados = []
+		//Gera -> valida -> adicona, ate 'numerosGerados' ter 'quantidade' de valores
+		while (numerosGerados.length < quantidade) {
+			//Gera valor aleatorio de 1 a 10
+			var numeroGerado = parseInt(Math.random() * 100);
+			//Variavel que indica se esse numero ja esta no array ou nao
+			var numeroRepetido = false;
+			//Passa por todos os itens do array 'numerosGerados'
+			for (var j = 0; j < numerosGerados.length; j++) {
+				//Verifica se 'numeroGerado' ja esta no array, se sim 
+				//Altera o valor de 'numeroRepetido' para true
+				if (numeroGerado == numerosGerados[j]) {
+					numeroRepetido = true;
+				} 
+			}	
+			//Verifica se 'numeroRepetido' e false, se sim, adiciona no array
+			if (!numeroRepetido) {
+					numerosGerados.push(numeroGerado);	
+			}
+		}
+		document.write("<meta charset='UTF-8'>");
+		document.write("<link rel='stylesheet' href='reset.css'>");
+		document.write("<link rel='stylesheet' href='style.css'>");
+		document.write("<link rel='stylesheet' href='style.css'>");
+		document.write("<body>");
+		for (var i = 0; i < numerosGerados.length; i++){
+			document.write(numerosGerados[i] + "  ");
+		}
+		document.write("</body>");
+	}
+	
+	var button = document.querySelector("button");
+    button.onclick = gerarNumeros;
+	
+</script>
+</body>

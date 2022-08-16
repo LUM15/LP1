@@ -1,0 +1,34 @@
+
+<meta charset="UTF-8">
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="style.css">
+
+<input/>
+<button>Comparar</button>
+<script>
+
+	function pulaLinha() {
+
+		document.write("<br>");
+		document.write("<br>");
+
+	}
+
+	function mostra(frase) {
+
+		document.write("<p>" + frase + "</p>");
+		pulaLinha();
+	}
+
+	
+	function alerta(){
+		var mensagem = document.querySelector("input");
+		
+			alert(mensagem.value);
+	}
+	
+	var botao = document.querySelector("button");
+	botao.onclick = alerta;
+
+	mostra("FIM!");
+</script>
